@@ -11,9 +11,7 @@ html {
   font-family: 'Roboto', sans-serif;
   line-height: 1;
   color: black;
-  background-image: url(./images/anastasia-kozheko-cloudy.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(#eaedfd, #89a4f8);
   height: 100%;
   background-attachment: fixed;
 }

@@ -37,8 +37,8 @@ function onSuccess(position) {
 
   const apiUri = `${endpoint}?lon=${longitude}&lat=${latitude}&units=${units}&lang=${language}&appid=${apiKey}`;
   //console.log(apiUri);
-  // Chiamiamo il nostro servizio esterno
 
+  // Chiamiamo il nostro servizio esterno
   fetch(apiUri)
     .then(function (response) {
       // trasformo la mia risposta in un formato più snello e leggibile
@@ -53,14 +53,21 @@ function onSuccess(position) {
       //console.log(locationName);
       const temperature = Math.floor(data.list[0].main["temp"]);
       //console.log(Math.floor(data.list[0].main.temp));
-      const day = data.list[0].dt_txt;
-      //console.log(day);
+      //const day = data.list[0].dt_txt;
+      const day = data.list;
+      console.log(day);
       const iconCode = data.list[0].weather[0].icon;
       //console.log(iconCode);
       const description = data.list[0].weather[0].description;
 
       // Prepariamo il consiglio giusto.
       const suggestion = getSuggestion(iconCode);
+      
+
+      for (let i = 0; i < day.length; i++) {
+        const element = day[i];
+          console.log(element);
+      }
 
       // Inseriamo questi dati dove vogliamo mostrarli
       weatherLocation.innerText = locationName;
@@ -69,7 +76,7 @@ function onSuccess(position) {
       weatherIcon.alt = description;
       weatherIcon.src = `images/${iconCode}.png`;
       suggestionParagraph.innerHTML = suggestion;
-
+      
       // Rimuoviamo la classe 'js-loading'
       rootElement.classList.remove('js-loading');
     });
