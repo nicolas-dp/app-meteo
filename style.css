@@ -1,3 +1,5 @@
+
+
 /* CSS Reset */
 * {
   padding: 0;
@@ -11,16 +13,21 @@ html {
   font-family: 'Roboto', sans-serif;
   line-height: 1;
   color: black;
-  background: linear-gradient(#eaedfd, #89a4f8);
   height: 100%;
-  background-attachment: fixed;
+  
 }
+
+body{
+  background: linear-gradient(#eaedfd, #89a4f8);
+  background-attachment: fixed;
+} 
 
 /* Container */
 .container {
   width: 90%;
   margin: 0 auto;
   padding: 16px;
+  
 }
 
 /* Logo */
@@ -54,7 +61,7 @@ main {
 }
 
 .weather-temperature {
-  font-size: 112px;
+    font-size: 25px;
 }
 
 /* Pannello dei consigli */
@@ -84,4 +91,8 @@ main {
 .js-loading .panel {
   opacity: 0;
   transform: scale(0);
+}
+
+.humidity{
+  margin-top: 2rem;
 }
